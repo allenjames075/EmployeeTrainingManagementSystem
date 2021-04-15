@@ -25,9 +25,16 @@ namespace ConsoleApp1
             if (name == "Allen James" && id == "0907" && password == "0000" && age == "19")
             {
 
-                
+                Console.WriteLine("\n\n\t --------------------------------------------\t");
+                Console.WriteLine("\t|             You are logged in              |\t");
+                Console.WriteLine("\t --------------------------------------------\t");
+
                 Console.WriteLine("\n\n\n\t=====Allen Employee Training Management System=====\n\n\n\t");
                 Console.WriteLine(" \tHello " + name + " Welcome to our system! \n \tAge: \t " + age);
+                Console.WriteLine("\n\nPress Enter to Continue!\n\n");
+
+                
+
                 Console.ReadLine();
                 Console.WriteLine("\tWhat kind of training do you want to do?\t");
                 Console.WriteLine(" (A) Visual");
