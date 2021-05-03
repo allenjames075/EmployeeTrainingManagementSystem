@@ -5,6 +5,13 @@ namespace ConsoleApp1
 {
     class Program
     {
+        string newname = "You are in the Kinaesthetic Program!";
+        public string newfunction(string input)
+        {
+            string message = input;
+            return message;
+        }
+
         static void Main(string[] args)
         {
 
@@ -12,9 +19,10 @@ namespace ConsoleApp1
             string userID = "0907";
             string userPassword = "0000";
             string Name, ID, Password;
+            
 
             Console.WriteLine("\n\n\n\t=====Welcome to Allen's Employee Training Management System =====\n\n\n");
-            Console.WriteLine("\tLogin!\t");
+            Console.WriteLine("\tLogin into your Account!\t");
             Console.Write("\tEnter your User Name: \t");
             Name = Convert.ToString(Console.ReadLine());
             Console.Write("\tEnter your User ID: \t");
@@ -112,9 +120,10 @@ namespace ConsoleApp1
 
             static void TrainingManagement()
             {
-                Console.WriteLine($"List of Trainees: ");
+                Console.WriteLine($"List of Traings: ");
                 foreach (var trainings in TrainingList())
                 {
+                    string optionSelected;
                     Console.WriteLine(trainings);
                     Console.WriteLine("\tWhat kind of training do you want to do?\t");
                     Console.WriteLine(" (A) Visual");
@@ -129,11 +138,46 @@ namespace ConsoleApp1
                     {
                         case 'a':
                         case 'A':
-                            Console.WriteLine("You are in the Visual Exercises ");
-                            Console.WriteLine("A visual prompt is a photograph, illustration or icon to represent a task.There aredifferent types of");
-                            Console.WriteLine("visual prompts depending upon what each individual needs.For example, we all usevisual prompts in ");
-                            Console.WriteLine("our daily lives. We see an icon on the the restroom door, and we know it is a bathroom. We write a to do ");
-                            Console.WriteLine("ist and leave it on the counter – it is a visual reminder or prompt to complete thetasks.");                       
+                            Console.WriteLine("Please type a if you want to continue and b if you want to exit");
+                            Console.WriteLine("Input: ");
+
+                            optionSelected = Console.ReadLine().ToLower();
+                            if(optionSelected.Equals("a"))
+                            {
+                                char choices = Console.ReadKey().KeyChar;
+                                Console.WriteLine("Would you take the test now? select x to continue and y to exit");
+                                switch (choices) 
+                                {
+                                    case 'X':
+                                        Console.WriteLine("What do you see?");
+                                        Console.WriteLine("-----");
+                                        Console.WriteLine("|    |");
+                                        Console.WriteLine("|    |");
+                                        Console.WriteLine("-----");
+                                        Console.WriteLine("Enter Answer: ");
+                                        break;
+                                    
+                                    case 'Y':
+                                        Console.WriteLine("Exit the Program");
+                                        System.Environment.Exit(0);
+                                        break;
+
+                                    default:
+                                        Console.WriteLine("Invalid Option");
+                                        break;
+
+                                }
+                            }
+                            else if (optionSelected.Equals("b"))
+                            {
+                                Console.WriteLine("Exit the Program");
+                                System.Environment.Exit(0);
+                            }
+                            else 
+                            {
+                                Console.WriteLine("Invalid Input!");
+                            }
+
                             break;
                         case 'b':
                         case 'B':
@@ -151,8 +195,12 @@ namespace ConsoleApp1
                             break;
                         case 'c':
                         case 'C':
-                            Console.WriteLine("Kinaesthetic");
-                            Console.WriteLine("On Going...");
+
+                            Program f= new Program();
+                            string str = f.newfunction(f.newname);
+                            Console.WriteLine("Input String is =" + str);
+                            Console.Read();
+
                             break;
                         default:
                             Console.WriteLine("Invalid Option");
