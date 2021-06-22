@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Linq;
+using System.Text;
 
 namespace ConsoleApp1
 {
     class Program
     {
-        string newname = "You are in the Kinaesthetic Program!";
+        string newname = "You are in the New Program!";
         public string newfunction(string input)
         {
             string message = input;
@@ -19,9 +22,13 @@ namespace ConsoleApp1
             string userID = "0907";
             string userPassword = "0000";
             string Name, ID, Password;
+
+
+
             
 
-            Console.WriteLine("\n\n\n\t=====Welcome to Allen's Employee Training Management System =====\n\n\n");
+
+        Console.WriteLine("\n\n\n\t=====Welcome to Allen's Employee Training Management System =====\n\n\n");
             Console.WriteLine("\tLogin into your Account!\t");
             Console.Write("\tEnter your User Name: \t");
             Name = Convert.ToString(Console.ReadLine());
@@ -43,7 +50,7 @@ namespace ConsoleApp1
             {
                 string userName = "Allen";
                 Console.WriteLine("\n\n\t --------------------------------------------\t");
-                Console.WriteLine("\t|             You are logged in  |\t");
+                Console.WriteLine("\t|             You are logged in           |\t");
                 Console.WriteLine("\t --------------------------------------------\t");
 
                 Console.WriteLine("\n\n\n\t=====Allen Employee Training Management System =====\n\n\n\t");
@@ -79,12 +86,18 @@ namespace ConsoleApp1
                         Exit();
                         break;
 
+                   
                     default:
                         Console.WriteLine("Invalid Input!");
                         break;
 
                 }
-            }
+                
+    }
+
+
+            
+
 
             static List<string> TraineesName()
             {
@@ -97,6 +110,8 @@ namespace ConsoleApp1
                 var TrainingList = new List<string>(){"Visual","Auditory","Kinaesthetic"};
                 return TrainingList;
             }
+
+            
 
             static void Trainees()
             {
@@ -114,10 +129,12 @@ namespace ConsoleApp1
                 foreach (var exercises in TrainingList())
                 {
                     Console.WriteLine(exercises);
+                    
                 }
                 MainMenu();
             }
 
+           
             static void TrainingManagement()
             {
                 Console.WriteLine($"List of Traings: ");
